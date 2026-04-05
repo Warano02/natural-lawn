@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -13,9 +13,9 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [active, setActive] = useState("Home");
+  const pathname = usePathname();
   return (
-    <header className="w-full">
+    <>
       <div className="bg-primary w-full">
         <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex items-center justify-between py-2">
           <div className="flex items-center gap-4">
@@ -51,11 +51,10 @@ export default function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => setActive(link.label)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  active === link.label
+                  pathname === link.href
                     ? "bg-primary text-white"
-                    : "text-gray-700 hover:text-primary"
+                    : "text-gray-700 hover:text-white hover:bg-primary"
                 }`}
               >
                 {link.label}
@@ -64,6 +63,6 @@ export default function Header() {
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }
