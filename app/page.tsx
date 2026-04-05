@@ -30,24 +30,9 @@ function Home() {
         <section className="w-full py-16">
           <div className="max-w-7xl mx-auto w-full px-4 md:px-8">
             <h2 className="text-primary font-bold text-4xl text-center mb-10">Our Services</h2>
-            <div className="grid grid-cols-3 gap-6">
-              {services.map((service) => (
-                <div key={service.title} className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow duration-300">
-                  <div className="relative w-full h-56">
-                    <Image src={service.image} alt={service.title} fill className="object-cover" />
-                  </div>
-                  <div className="flex flex-col items-center gap-3 py-5 px-4">
-                    <h3 className="text-primary font-medium text-lg">{service.title}</h3>
-                    <Link href={`/services/#${service.title.toLocaleLowerCase().split(" ")[0]}`} className="px-5 py-1.5 rounded-full border border-gray-300 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-all duration-200">
-                      Find Out More
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Services />
           </div>
         </section>
-
         <section className="w-full py-16">
           <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex flex-col items-center gap-6 text-center">
             <p className="text-primary font-semibold text-2xl">
@@ -65,7 +50,7 @@ function Home() {
         <div className="wrapper">
           <section className="w-full flex flex-col md:flex-row">
             <div className="w-full  md:w-80 flex items-end justify-center overflow-hidden shrink-0 relative">
-              <Image  src="/assets/images/whoweare.jpg" alt="Tim Brown, Owner"  fill className="object-content object-bottom w-full h-full max-h-174"/>
+              <Image src="/assets/images/whoweare.jpg" alt="Tim Brown, Owner" fill className="object-content object-bottom w-full h-full max-h-174" />
             </div>
             <div className="flex flex-1 flex-col  bg-black">
               <div className="bg-white flex flex-col justify-center gap-5  md:px-12 py-10">
@@ -101,4 +86,21 @@ function Home() {
   )
 }
 
+export const Services = () => {
+  return <div className="grid grid-cols-3 gap-6">
+    {services.map((service) => (
+      <div key={service.title} className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <div className="relative w-full h-56">
+          <Image src={service.image} alt={service.title} fill className="object-cover" />
+        </div>
+        <div className="flex flex-col items-center gap-3 py-5 px-4">
+          <h3 className="text-primary font-medium text-lg">{service.title}</h3>
+          <Link href={`/services/#${service.title.toLocaleLowerCase().split(" ")[0]}`} className="px-5 py-1.5 rounded-full border border-gray-300 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-all duration-200">
+            Find Out More
+          </Link>
+        </div>
+      </div>
+    ))}
+  </div>
+}
 export default Home
