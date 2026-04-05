@@ -5,6 +5,7 @@ export const metadata = {
     description: "How to care for a new lawn - mowing and watering in summer and winter. Native wild flower meadow cutting, weeding and maintenance advice.",
     keywords: "lawn replacement tips, advice,treatment,shade,seasonal,care,weeding,mowing,maintenance"
 }
+
 function Tips() {
     return (
         <main className="space-y-6">
@@ -25,6 +26,12 @@ function Tips() {
                 image="/assets/images/tips1.jpg"
             />
             <TipDetail
+                title="Maintaining your wild flower meadow"
+                body="During establishment it will need to be watered regularly. Weeding should not be necessary if wild flower turf has been laid due to the weed blanket effect of the turf, and once established, it requires very little maintenance. It will not require fertilising, and can just be cut once a year in the autumn. The emergence of flowers and the type of plants that flower will vary from year to year according to temperature, moisture and available nutrients."
+                image="/assets/images/tips2.jpg"
+                bg="light"
+            />
+            <TipDetail
                 title="Lawns in heavy shade"
                 body="Grass tends to not like heavily shaded areas and will struggle to grow tall like it does when in full sun. You should cut the grass longer, but just as frequently, and also help the shaded grass by feeding it more regularly. In the worst areas, you may need to re-turf, or we can help you find an alternative to natural lawn."
                 image="/assets/images/tips3.jpg"
@@ -40,10 +47,12 @@ interface TipDetailProps {
     image: string;
     imageAlt?: string;
     reverse?: boolean;
+    bg?: "white" | "light";
 }
-function TipDetail({ title, body, image, imageAlt = "", reverse = false }: TipDetailProps) {
+
+function TipDetail({ title, body, image, imageAlt = "", reverse = false, bg = "white" }: TipDetailProps) {
     return (
-        <section className="w-full py-12">
+        <section className={`w-full py-12 ${bg === "light" ? "bg-[#eef2e2]" : "bg-white"}`}>
             <div className={`max-w-7xl mx-auto w-full px-4 md:px-8 flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12`}>
                 <div className="flex-1 flex flex-col gap-5">
                     <h2 className="text-primary font-bold text-3xl">{title}</h2>
