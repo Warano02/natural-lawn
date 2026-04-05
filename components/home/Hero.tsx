@@ -30,7 +30,7 @@ export default function Hero() {
                 <Image src="/logo-large.png" alt="Natural Lawn Installation" width={420} height={180} className="object-contain drop-shadow-xl" />
                 <div className="flex items-center gap-4">
                     <Link href="/contact-us" className="px-7 py-3 rounded-full border-2 border-white text-white text-sm font-medium backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-200">
-                        Request a Free Quote
+                        Request a Free Quote Warano
                     </Link>
                     <Link href="/about-us" className="px-7 py-3 rounded-full border-2 border-white text-white text-sm font-medium backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-200">
                         About Us
