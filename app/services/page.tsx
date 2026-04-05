@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   keywords: "garden maintenance,landscaping,new lawn seeding,topsoil,croquet,tennis,supplier sussex,surrey,kent"
 }
 
+const projects = [
+  { src: "/assets/images/recent1.jpg", alt: "Recently completed project 1" },
+  { src: "/assets/images/recent2.jpg", alt: "Recently completed project 2" },
+  { src: "/assets/images/recent3.jpg", alt: "Recently completed project 3" },
+];
 function ServicesPage() {
   return (
     <main className="space-y-6">
@@ -45,6 +50,35 @@ function ServicesPage() {
       <GroundsMaintenance />
       <SoftLandscaping />
       <GreenRoofs />
+
+      <section className="w-full relative h-48 overflow-hidden">
+        <Image src="/assets/images/abstract2.jpg" alt="Lawn care" fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 h-full flex flex-col items-center justify-center gap-5 px-4 text-center">
+          <p className="text-white font-bold text-2xl md:text-3xl max-w-2xl leading-snug">
+            Once we have finished laying your lawn, we will advise you on the best way to care for it.
+          </p>
+          <Link href="/contact-us" className="px-6 py-2 rounded-full border border-white text-white text-sm hover:bg-white hover:text-primary transition-all duration-200">
+            Let's Get Started
+          </Link>
+        </div>
+      </section>
+
+      <section className="w-full py-14">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex flex-col items-center gap-8">
+          <h2 className="text-primary font-bold text-3xl">Recently Completed Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+            {projects.map((project) => (
+              <div key={project.src} className="relative w-full h-52 rounded-2xl overflow-hidden shadow-md">
+                <Image src={project.src} alt={project.alt} fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+          <Link href="/our-work" className="bg-secondary text-white px-8 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity duration-200">
+            See More
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }
