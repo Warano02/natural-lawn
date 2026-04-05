@@ -5,6 +5,7 @@ import Image from "next/image"
 import WildFlowerMeadows from "@/components/services/WildFlowerMeadows"
 import GroundsMaintenance from "@/components/services/GroundMaintenance"
 import SoftLandscaping from "@/components/services/Softlandscaping"
+import GreenRoofs from "@/components/services/GreenRoofs"
 
 export const metadata: Metadata = {
   title: "Natural Lawns  - Experts in lawn replacement, sports turf and wild flowers",
@@ -43,6 +44,7 @@ function ServicesPage() {
       <WildFlowerMeadows />
       <GroundsMaintenance />
       <SoftLandscaping />
+      <GreenRoofs />
     </main>
   )
 }
