@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
@@ -5,10 +6,10 @@ import { Phone, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="bg-[#eef2e2] w-full py-10">
+      <div className="bg-[#EAEFDD] w-full py-10 mt-12">
         <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex flex-col items-center gap-6">
           <Image src="/logo.png" alt="Natural Lawn Installation" width={160} height={70} className="object-contain" />
-          <Link href="/contact" className="bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity duration-200">
+          <Link href="/contact-us" className="bg-primary text-white px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity duration-200">
             Request a Free Quote
           </Link>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
@@ -31,17 +32,15 @@ export default function Footer() {
             <Link href="https://linkedin.com" aria-label="LinkedIn">
               <svg className="w-5 h-5 fill-gray-600 hover:fill-primary transition-colors duration-200" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
             </Link>
-            <Image src="/assets/images/badge-lantra.png" alt="Lantra certification" width={44} height={44} className="object-contain" />
-            <Image src="/assets/images/badge-city-guilds.png" alt="City & Guilds NPTC" width={60} height={44} className="object-contain" />
+            <Image src="/assets/images/beekeeper.png" alt="Lantra certification" width={44} height={44} className="object-contain" />
+            <Image src="/assets/images/cityGuilds.png" alt="City & Guilds NPTC" width={60} height={44} className="object-contain" />
           </div>
         </div>
       </div>
-      <div className="bg-gray-600 w-full">
-        <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between py-3 gap-2">
-          <a href="https://fb.me/natural.lawn.installation" className="text-white/80 text-xs hover:text-white transition-colors duration-200">
-            www.fb.me/natural.lawn.installation
-          </a>
-          <p className="text-white/80 text-xs">© Copyright - Natural Lawn Installation 2026</p>
+      <div className="bg-[#636363] w-full">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-8 flex  items-center justify-center py-3 gap-2">
+
+          <p className="text-white/80 text-xs">© Copyright - Natural Lawn Installation {new Date().getFullYear()} </p>
         </div>
       </div>
     </footer>
